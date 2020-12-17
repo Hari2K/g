@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style type="text/css">
+  body{
+    background-color:yellow;
+    background-size:cover;
+    background-position:center;
+    color: black;
+    font-style: bold;
+  }
+  form{
+    margin-top: 10%;
+    margin-right: 30%;
+    margin-left: 30%;
+    background-color: white;
+    padding-top: 30px;
+    padding-bottom: 20px;
+  }
+  </style>
+</head>
+<body>
+    <center>
+<form>
+  <div class="container">
+  <center><h2>Login</h2></center>
+  </div><br>
+  <div class="form-group">
+  <label>Mail id</label>
+  <input type="email" name="mail" id="mail"><br><br>
+  </div>
+  <div class="form-group">
+  <label>Password</label>
+  <input type="Password" name="password" id="password"><br><br>
+  </div>
+  <button type="submit" onclick="return dis()">Submit</button>
+  <button type="reset">Reset</button>
+  <button type="" formaction="home.html">Back</button>
+  <button formaction="signup.html">Register</button>
+</form>
+</center>
+</div>
+<script type="text/javascript">
+  function dis(){
+    var mail=document.getElementById("mail").value;
+    var pass=document.getElementById("password").value;
+    if(mail=="")
+    {
+      window.alert("Please enter your mail id");
+      mail.focus();
+      return false;
+    }
+    if(pass=="")
+    {
+      window.alert("Please enter your password");
+      return false;
+    }
+    return true;
+  }
+</script>
+</body>
+</html>

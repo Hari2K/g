@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sign Up</title>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style type="text/css">
+  body{
+   background-color:yellow;
+    background-size:cover;
+    background-position:center;
+    color: black;
+    font-style: bold;
+  }
+  form{
+  	margin-top: 0%;
+  	margin-right: 30%;
+  	margin-left: 30%;
+  	background-color: white;
+  	padding-top: 30px;
+  	padding-bottom: 20px;
+  }
+  </style>
+  <script>
+  function validate()	
+{ 
+var name = document.getElementById("Name");
+var age = document.getElementById("Age");	
+var email = document.getElementById("EMail"); 
+var phone = document.getElementById("Telephone"); 
+var password = document.getElementById("password"); 
+var voter = document.getElementById("vote"); 
+var repass = document.getElementById("reenterpass"); 
+var dob = document.getElementById("date");
+if (name.value == "")	
+{ 
+window.alert("Please enter your name."); 
+name.focus(); 
+return false; 
+} 
+var letters = /^[A-Za-z]+$/;
+if (!(name.value.match(letters)))
+{
+    window.alert("Please enter a valid name"); 
+name.focus(); 
+return false; 
+}
+if(age.value == "")
+{
+	window.alert("Please enter your age");
+	age.focus();
+	return false;
+}
+if (dob.value == "")
+{
+window.alert("Please enter a date");
+dob.focus();
+return false;
+}
+if (email.value == "")	
+{ 
+window.alert("Please enter your e-mail address."); 
+email.focus(); 
+return false; 
+} 
+var emm=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{3})+$/;
+if (!email.value.match(emm))
+{
+window.alert("Please enter a valid email address");
+email.focus();
+return false;
+}
+if (phone.value == "")	
+{ 
+window.alert("Please enter your phone number."); 
+phone.focus(); 
+return false; 
+} 
+var phoneno = /^\d{10}$/;
+    if(!(phone.value.match(phoneno)))
+    {
+    window.alert("Please enter a valid phone number."); 
+phone.focus(); 
+return false; 
+    }
+if(phone.value.length<10 || phone.value.length>10)
+{
+window.alert("Please enter a 10 digit phone no"); 
+phone.focus(); 
+return false; 
+} 
+var password1=/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*]).{8,12}$/;
+if(password.value=="")
+{
+	window.alert("Please enter your password");
+	password.focus();
+	return false;
+}
+if(!password.value.match(password1)){
+      	window.alert("Your password should contain Lowercase,Uppercase,number and a special character of length 8-12")
+        return false;
+      }
+    if(repass.value=="")
+    {
+    	window.alert("Please enter your password again");
+    	repass.focus();
+    	return false;
+    }
+if(password.value!=repass.value)
+{
+			window.alert("Password didn't match");
+			repass.focus();
+			return false;
+}
+ return true; 
+
+}
+</script> 
+</head>
+<body>
+<center>
+<form name="RegForm">
+	<div class="container">
+		<center><h2>Sign Up the form</h2></center>
+	</div><br>
+	<div class="form-group">
+	<label>Name</label>
+	<input type="text" name="Name" onkeyup="this.value = this.value.replace(/[^A-Za-z]/,'')" id="Name"><br><br>
+</div>
+<div class="form-group">
+	<label>Age</label>
+	<input type="text" name="Age" maxlength="2" id="Age"><br><br>
+</div>
+	<div class="form-group">
+	<label>Phone Number</label>
+	<input type="number" name="Telephone"  minlength="10" maxlength="10" onkeyup="this.value = this.value.replace(/[^0-9]/,'')" id="Telephone"><br><br>
+	</div>
+	<div class="form-group">
+	<label>Password</label>
+	<input type="Password" name="password" id="password"><br><br>
+	</div>
+	<div class="form-group">
+	<label>Re-enter Password</label>
+	<input type="Password" name="reenterpass" id="reenterpass"><br><br>
+	</div>
+	<button type="submit" onclick="return validate()">Submit</button>
+	<button type="reset">Reset</button>
+	<button formaction="mainpage.html">Back</button>
+	<button href="login.html" formaction="login.html">Login</button>
+</form>
+</center>
+</div>
+
+</body>
+</html>
